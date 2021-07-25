@@ -55,6 +55,8 @@ const MainHeader = styled.div`
   height: 72px;
   justify-content: space-between;
   padding: 18px 32px;
+  overflow-x: auto;
+  overflow-y: hidden;
 
   @media ${QUERIES.tabletAndSmaller} {
     border-top: 4px solid ${COLORS.gray[900]};

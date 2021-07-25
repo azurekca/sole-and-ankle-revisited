@@ -12,13 +12,14 @@ const MainNav = ({ className }) => {
       <NavLink href="/women">Women</NavLink>
       <NavLink href="/kids">Kids</NavLink>
       <NavLink href="/collections">Collections</NavLink>
+      <NavLink href="/gevurkenfleurken">Gevurkenfleurken</NavLink>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(1rem, 8.5vw - 4.25rem, 48px);
   margin: 0px 48px;
 `;
 
