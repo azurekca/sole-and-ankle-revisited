@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
 import SuperHeader from "../SuperHeader";
+import MainNav from "../MainNav";
 import MobileMenu from "../MobileMenu";
 
 const Header = () => {
@@ -23,14 +24,7 @@ const Header = () => {
         <Side>
           <Logo />
         </Side>
-        <LaptopNav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </LaptopNav>
+        <LaptopNav className="laptop-nav" />
         <Side>
           <MobileNav>
             <UnstyledButton>
@@ -39,7 +33,7 @@ const Header = () => {
             <UnstyledButton>
               <Icon id="search" strokeWidth={1} />
             </UnstyledButton>
-            <UnstyledButton>
+            <UnstyledButton onClick={() => setShowMobileMenu(true)}>
               <Icon id="menu" strokeWidth={1} />
             </UnstyledButton>
           </MobileNav>
@@ -71,13 +65,11 @@ const MainHeader = styled.div`
   }
 `;
 
-const LaptopNav = styled.nav`
-  display: flex;
-  gap: 48px;
-  margin: 0px 48px;
-
-  @media ${QUERIES.tabletAndSmaller} {
-    display: none;
+const LaptopNav = styled(MainNav)`
+  &.laptop-nav {
+    @media ${QUERIES.tabletAndSmaller} {
+      display: none;
+    }
   }
 `;
 
@@ -93,18 +85,6 @@ const MobileNav = styled.nav`
 
 const Side = styled.div`
   flex: 1;
-`;
-
-const NavLink = styled.a`
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
-
-  &:first-of-type {
-    color: ${COLORS.secondary};
-  }
 `;
 
 export default Header;
