@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components/macro';
+import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -71,6 +71,30 @@ html {
     Silence the warning about missing Reach Dialog styles
   */
   --reach-dialog: 1;
+
+  /*
+    Colour variables
+  */
+  --primary-hue: 340deg;
+  --secondary-hue: 240deg;
+
+  --primary-color: hsl(var(--primary-hue) 65% 47%);
+  --secondary-color: hsl(var(--secondary-hue) 60% 63%);
+
+  --white: hsl(0deg 0% 100%);
+
+  --gray-100: hsl(185deg 5% 95%);
+  --gray-300: hsl(190deg 5% 80%);
+  --gray-500: hsl(196deg 4% 60%);
+  --gray-700: hsl(220deg 5% 40%);  
+  --gray-900: hsl(220deg 3% 20%); 
+
+  /*
+    Weights
+  */
+  --normal: 500;
+  --medium: 600;
+  --bold: 800; 
 }
 
 html, body, #root {

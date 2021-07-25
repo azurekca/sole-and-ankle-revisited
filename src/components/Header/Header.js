@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS, QUERIES } from "../../constants";
+import { QUERIES } from "../../constants";
 import Logo from "../Logo";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
@@ -50,7 +50,7 @@ const Header = () => {
 
 const MainHeader = styled.div`
   align-items: baseline;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--gray-300);
   display: flex;
   height: 72px;
   justify-content: space-between;
@@ -59,7 +59,7 @@ const MainHeader = styled.div`
   overflow-y: hidden;
 
   @media ${QUERIES.tabletAndSmaller} {
-    border-top: 4px solid ${COLORS.gray[900]};
+    border-top: 4px solid var(--gray-900);
   }
 
   @media ${QUERIES.phoneAndSmaller} {

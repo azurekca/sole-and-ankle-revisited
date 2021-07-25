@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from "../../constants";
-
 const MainNav = ({ className }) => {
   return (
     <Wrapper className={className}>
@@ -27,11 +25,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--gray-900);
+  font-weight: var(--medium);
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--secondary-color);
   }
 `;
 

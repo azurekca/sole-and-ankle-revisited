@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 
-import { COLORS, QUERIES } from "../../constants";
+import { QUERIES } from "../../constants";
 
 import MainNav from "../MainNav";
 import UnstyledButton from "../UnstyledButton";
@@ -17,7 +17,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   }
 
   return (
-    <DialogOverlay>
+    <Overlay>
       <SlideOutMenu>
         <CloseButton onClick={onDismiss}>
           <VisuallyHidden>Dismiss menu</VisuallyHidden>
@@ -30,9 +30,15 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
           <FooterLink href="/contact">Contact Us</FooterLink>
         </Footer>
       </SlideOutMenu>
-    </DialogOverlay>
+    </Overlay>
   );
 };
+
+const Overlay = styled(DialogOverlay)`
+  &[data-reach-dialog-overlay] {
+    background: hsla(var(--primary-hue), 50%, 20%, 0.33);
+  }
+`;
 
 const SlideOutMenu = styled(DialogContent)`
   &[data-reach-dialog-content] {
@@ -73,7 +79,7 @@ const Footer = styled.footer`
 `;
 
 const FooterLink = styled.a`
-  color: ${COLORS.gray[700]};
+  color: var(--gray-700);
   font-size: 1rem;
   text-decoration: none;
 `;
