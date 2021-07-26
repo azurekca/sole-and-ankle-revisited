@@ -52,11 +52,9 @@ const MainHeader = styled.div`
   align-items: baseline;
   border-bottom: 1px solid var(--gray-300);
   display: flex;
-  height: 72px;
   justify-content: space-between;
   padding: 18px 32px;
   overflow-x: auto;
-  overflow-y: hidden;
 
   @media ${QUERIES.tabletAndSmaller} {
     border-top: 4px solid var(--gray-900);
